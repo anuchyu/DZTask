@@ -57,14 +57,14 @@ namespace DZTask
             var current = Head;
             while(current != null)
             {
-                yield return current;
+                yield return current.Data;
                 current = current.Next;
             }
         }
 
-        IEnumerator<T> IEnumerable<T>.GetEnumerator()
+        IEnumerator IEnumerable.GetEnumerator()
         {
-            return (IEnumerator<T>)GetEnumerator();
+            return GetEnumerator();
         }
     }
 }
