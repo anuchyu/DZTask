@@ -2,7 +2,7 @@
 
 namespace DZTask
 {
-    public class DuplexLinledList<T> : IEnumerable<T>
+    public class DuplexLinkedList<T> : IEnumerable<T>
     {
         public DuplexItem<T> Head { get; set; }
         public DuplexItem<T> Tail { get; set; }
@@ -54,12 +54,17 @@ namespace DZTask
 
         public IEnumerator<T> GetEnumerator()
         {
-            throw new NotImplementedException();
+            var current = Head;
+            while(current != null)
+            {
+                yield return current;
+                current = current.Next;
+            }
         }
 
-        IEnumerator IEnumerable.GetEnumerator()
+        IEnumerator<T> IEnumerable<T>.GetEnumerator()
         {
-            throw new NotImplementedException();
+            return (IEnumerator<T>)GetEnumerator();
         }
     }
 }

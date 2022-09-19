@@ -1,4 +1,6 @@
-﻿var duplexList = new DuplexLinkedList<int>();
+﻿using DZTask;
+
+var duplexList = new DuplexLinkedList<int>();
 duplexList.Add(1);
 duplexList.Add(2);
 duplexList.Add(3);
